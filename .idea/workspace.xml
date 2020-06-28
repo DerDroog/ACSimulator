@@ -3,31 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="56999fb9-f9b0-480f-a489-109c782394ce" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/HEAD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/description" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/hooks/applypatch-msg.sample" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/hooks/commit-msg.sample" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/hooks/fsmonitor-watchman.sample" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/hooks/post-update.sample" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/hooks/pre-applypatch.sample" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/hooks/pre-commit.sample" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/hooks/pre-merge-commit.sample" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/hooks/pre-push.sample" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/hooks/pre-rebase.sample" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/hooks/pre-receive.sample" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/hooks/prepare-commit-msg.sample" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/hooks/update.sample" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/info/exclude" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/objects/8b/348b87557df3605ddbd0f91a864d09190c1239" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/objects/ac/ff33fbd787cc4ee95c3848b35be5a7f3629c34" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/objects/b2/d62523d17528a9d0f850aeb9962238903a7bf2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACSimulator.git/packed-refs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/battle.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/battlefield.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/character.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/team.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/character.py" beforeDir="false" afterPath="$PROJECT_DIR$/character.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,10 +29,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/main.py" />
   </component>
   <component name="RunManager">
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="ACSimulator" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -68,7 +44,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -92,13 +68,29 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593370790446">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593371769275">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.165.1920.1040@0.0.1920.1040" timestamp="1593370790446" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1593370786070">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.165.1920.1040@0.0.1920.1040" timestamp="1593371769275" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1593371767700">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.165.1920.1040@0.0.1920.1040" timestamp="1593370786070" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.165.1920.1040@0.0.1920.1040" timestamp="1593371767700" />
+    <state width="1362" height="266" key="GridCell.Tab.0.bottom" timestamp="1593371827753">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1362" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.165.1920.1040@0.0.1920.1040" timestamp="1593371827753" />
+    <state width="1362" height="266" key="GridCell.Tab.0.center" timestamp="1593371827753">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1362" height="266" key="GridCell.Tab.0.center/0.0.1920.1040/1920.165.1920.1040@0.0.1920.1040" timestamp="1593371827753" />
+    <state width="1362" height="266" key="GridCell.Tab.0.left" timestamp="1593371827753">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1362" height="266" key="GridCell.Tab.0.left/0.0.1920.1040/1920.165.1920.1040@0.0.1920.1040" timestamp="1593371827753" />
+    <state width="1362" height="266" key="GridCell.Tab.0.right" timestamp="1593371827753">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1362" height="266" key="GridCell.Tab.0.right/0.0.1920.1040/1920.165.1920.1040@0.0.1920.1040" timestamp="1593371827753" />
   </component>
 </project>

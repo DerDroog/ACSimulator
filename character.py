@@ -33,8 +33,6 @@ class Character:
         pass
 
     def update_position(self, timestep):
-        self.position[0] += 1
-        self.position[1]
         pass
 
     def update_spell_cd(self, timestep):
