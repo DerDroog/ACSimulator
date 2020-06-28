@@ -1,7 +1,6 @@
 class Character:
     def __init__(self, name_, health_, mana_, position_, max_atk_cd_, atk_cd_, max_spell_cd_, spell_cd_, atk_, armor_,
-                 team_=None,
-                 target_=None, alive_=True):
+                 team_=None, target_=None, alive_=True):
         self.name = name_
         self.health = health_
         self.mana = mana_
@@ -34,6 +33,8 @@ class Character:
         pass
 
     def update_position(self, timestep):
+        self.position[0] += 1
+        self.position[1]
         pass
 
     def update_spell_cd(self, timestep):

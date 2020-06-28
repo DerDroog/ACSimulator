@@ -1,6 +1,7 @@
 import character
 import numpy as np
 import pdb
+import sys
 
 
 class Battle:
