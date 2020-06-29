@@ -21,6 +21,14 @@ class Character:
         self.armor = armor_
         self.alive = alive_
 
+    def __repr__(self):
+        print("*******************************************************************************************")
+        if self.target is not None:
+            return f"Name: {self.name} \nHealth: {self.health} \nMana: {self.mana}\nPosition: {self.position} \nTarget: {self.target.name} \nAlive: {self.alive}"
+        else:
+            return f"Name: {self.name} \nHealth: {self.health} \nMana: {self.mana}\nPosition: {self.position} \nTarget: None. \nAlive: {self.alive}"
+        print("*******************************************************************************************")
+
     @staticmethod
     def armor_reduction(armor):
         return armor / 10
@@ -35,13 +43,14 @@ class Character:
         if self.atk_cd <= 0 and self.target is not None:
             self.hit()
             self.atk_cd = self.max_atk_cd
+            self.target.update_alive()
         self.atk_cd -= timestep
         pass
 
     def update_mv_dir(self, target):
         # default target is usually center of battle field
         self.mv_dir = (target - self.position)
-        self.mv_dir = self.mv_dir/np.linalg.norm(self.mv_dir)
+        self.mv_dir = self.mv_dir / np.linalg.norm(self.mv_dir)
 
     def update_position(self, timestep):
         self.position = self.position + self.mv_speed * self.mv_dir * timestep
@@ -55,9 +64,12 @@ class Character:
     def update_alive(self):
         if self.health <= 0:
             self.alive = False
+            print("\n" + self.name + " has died.")
 
     def hit(self):
         dmg_dealt = self.atk * (1 - Character.armor_reduction(self.target.armor))
         self.target.health -= dmg_dealt
         self.target.mana += dmg_dealt * 0.3
-        print("\n", self.name, " hit ", self.target.name, " for ", dmg_dealt, ". Health: ", self.target.health)
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        print("\n", self.name, " hit ", self.target.name, " for ", dmg_dealt, ". Health: ", self.target.health, "\n")
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")

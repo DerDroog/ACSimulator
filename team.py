@@ -1,8 +1,9 @@
 import character
 import numpy as np
 
+
 class Team:
-    def __init__(self, name_, charlist_, alive_ = True):
+    def __init__(self, name_, charlist_, alive_=True):
         self.name = name_
         self.charlist = charlist_
         self.living_chars = [char for char in self.charlist if char.alive == True]
@@ -14,4 +15,4 @@ class Team:
         statelist = [char.alive for char in self.charlist]
         if np.sum(statelist) == 0:
             self.alive = False
-        return statelist
+        self.living_chars = [char for char in self.charlist if char.alive == True]
