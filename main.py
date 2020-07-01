@@ -6,7 +6,8 @@ import numpy as np
 if __name__ == '__main__':
     tmp1 = []
     tmp2 = []
-    teamsize = 10
+    teamsize = 6
+
     for i in range(teamsize):
         tmp1.append(
             character.Character("Tusk1_" + str(i), 100, 0, np.array([0, i / teamsize]), 1, 1, None, None, 100, 2, 1,

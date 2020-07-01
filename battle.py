@@ -18,27 +18,30 @@ class Battle:
 
     def update(self):
 
-        for character in self.team1.living_chars + self.team2.living_chars:
-            print(repr(character))
-            self.team1.update_state()
-            self.team2.update_state()
-            if self.time >= self.max_time or self.team1.alive == False or self.team2.alive == False:
-                self.end_battle()
-                break
+        for character in self.team1.charlist + self.team2.charlist:
+            if character.alive == True:
+                print("\nCurrent time " + str(self.time))
+                print(repr(character))
+                self.team1.update_state()
+                self.team2.update_state()
+                if self.time >= self.max_time or self.team1.alive == False or self.team2.alive == False:
+                    self.end_battle()
+                    break
 
-            self.update_target(character)
-            if character.target is None:
-                mv_target = self.battle_field.center
-            else:
-                mv_target = character.target.position
-            character.update_mv_dir(mv_target)
-            if character.target is None:
-                character.update_position(self.timestep)
-            character.update_atk_cd(self.timestep)
-            character.update_dmg(self.timestep)
-            character.update_heatlh(self.timestep)
-            character.update_mana(self.timestep)
-            character.update_spell_cd(self.timestep)
+                self.update_target(character)
+                if character.target is None:
+                    mv_target = self.battle_field.center
+                else:
+                    mv_target = character.target.position
+                character.update_mv_dir(mv_target)
+                if character.target is None:
+                    character.update_position(self.timestep)
+                character.update_atk_cd(self.timestep) #calls hit --> calls update_alive --> call update_states
+
+                character.update_dmg(self.timestep)
+                character.update_heatlh(self.timestep)
+                character.update_mana(self.timestep)
+                character.update_spell_cd(self.timestep)
 
         self.time += self.timestep
 
@@ -50,10 +53,6 @@ class Battle:
 
     def update_target(self, character):
 
-        character.update_alive()
-        self.team1.update_state()
-        self.team2.update_state()
-
         enemy_team = self.get_enemy_team(character.team)
         enemy_distances = np.array(
             [np.linalg.norm(enemy.position - character.position) for enemy in enemy_team.living_chars])
@@ -64,7 +63,7 @@ class Battle:
             character.target = enemy_team.living_chars[closest_enemy_index]
             print("\n", character.name, " updated target to: ", enemy_team.living_chars[closest_enemy_index].name)
         else:
-            self.target = None
+            character.target = None
 
     def end_battle(self):
         self.active = False

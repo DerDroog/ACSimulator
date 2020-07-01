@@ -43,7 +43,6 @@ class Character:
         if self.atk_cd <= 0 and self.target is not None:
             self.hit()
             self.atk_cd = self.max_atk_cd
-            self.target.update_alive()
         self.atk_cd -= timestep
         pass
 
@@ -61,15 +60,13 @@ class Character:
     def update_dmg(self, timestep):
         pass
 
-    def update_alive(self):
-        if self.health <= 0:
-            self.alive = False
-            print("\n" + self.name + " has died.")
-
     def hit(self):
         dmg_dealt = self.atk * (1 - Character.armor_reduction(self.target.armor))
         self.target.health -= dmg_dealt
+        self.target.alive = (self.target.health > 0)
         self.target.mana += dmg_dealt * 0.3
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         print("\n", self.name, " hit ", self.target.name, " for ", dmg_dealt, ". Health: ", self.target.health, "\n")
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        if self.target.alive == False:
+            print("\n", self.target.name, " has died.")
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
