@@ -12,7 +12,11 @@ class Team:
             char.team = self
 
     def update_state(self):
+
         statelist = [char.alive for char in self.charlist]
         if np.sum(statelist) == 0:
             self.alive = False
         self.living_chars = [char for char in self.charlist if char.alive == True]
+
+
+

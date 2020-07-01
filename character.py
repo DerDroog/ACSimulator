@@ -24,9 +24,9 @@ class Character:
     def __repr__(self):
         print("*******************************************************************************************")
         if self.target is not None:
-            return f"Name: {self.name} \nHealth: {self.health} \nMana: {self.mana}\nPosition: {self.position} \nTarget: {self.target.name} \nAlive: {self.alive}"
+            return f"Name: {self.name} \nHealth: {self.health} \nMana: {self.mana}\nPosition: {self.position} \nTarget: {self.target.name} \nAlive: {self.alive} \nTarget State: {self.target.alive}"
         else:
-            return f"Name: {self.name} \nHealth: {self.health} \nMana: {self.mana}\nPosition: {self.position} \nTarget: None. \nAlive: {self.alive}"
+            return f"Name: {self.name} \nHealth: {self.health} \nMana: {self.mana}\nPosition: {self.position} \nTarget: None. \nAlive: {self.alive} \nTarget STate: None"
         print("*******************************************************************************************")
 
     @staticmethod
