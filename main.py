@@ -3,12 +3,14 @@ import team
 import battle
 import pygame
 import numpy as np
+import time
 
 
 class MainRun:
-    def __init__(self, display_width_, display_height_, stopped_=False):
+    def __init__(self, display_width_, display_height_, timestep_, stopped_=False):
         self.dw = display_width_
         self.dh = display_height_
+        self.timestep = timestep_
         self.stopped = stopped_
         self.main()
 
@@ -17,22 +19,31 @@ class MainRun:
 
     def main(self):
 
+
         while self.stopped == False:
 
             window.fill((255, 255, 255))
 
             # positioning of characters
             for char in sim.team1.charlist + sim.team2.charlist:
-                charX = int(char.position[0])
-                charY = int(char.position[1])
-                self.show_char(charX, charY)
+
+                char.position[0] += char.mv_speed
+                char.position[1] += char.mv_speed
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.stopped = True
 
-
+            self.show_char(char.position[0], char.position[1])
             pygame.display.update()
+            time.sleep(0.1)
+
+
+
+
+
+
+
 
 
 
@@ -76,20 +87,20 @@ if __name__ == '__main__':
 
     for i in range(teamsize):
         tmp1.append(
-            character.Character("Tusk1_" + str(i), 100, 0, np.array([100, 100]), 1, 1, None, None, 100, 2, 1,
+            character.Character("Tusk1_" + str(i), 100, 0, np.array([500, 500]), 1, 1, None, None, 100, 2, 20,
                                 None, 1))
-        tmp2.append(
-            character.Character("Tusk2_" + str(i), 100, 0, np.array([500, 500]), 1, 1, None, None, 10, 2, 1,
-                                None,
-                                1))
+        #tmp2.append(
+            #character.Character("Tusk2_" + str(i), 100, 0, np.array([screen_size[0], screen_size[1]]), 1, 1, None, None, 10, 2, 1,
+             #                   None,
+              #                  1))
 
     #### Set up game ####
-    MainRun(width, height)
+    MainRun(width, height, sim.timestep)
 
 
 
     #positioning of characters
 
 
-    while sim.active:
-        sim.update()
+    #while sim.active:
+    #    sim.update()

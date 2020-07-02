@@ -53,6 +53,7 @@ class Character:
 
     def update_position(self, timestep):
         self.position = self.position + self.mv_speed * self.mv_dir * timestep
+        return self.mv_speed * self.mv_dir * timestep
 
     def update_spell_cd(self, timestep):
         pass
