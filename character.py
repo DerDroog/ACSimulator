@@ -31,7 +31,8 @@ class Character:
 
     @staticmethod
     def armor_reduction(armor):
-        return armor / 10
+        alpha = -np.log(0.8)/5
+        return 1 - np.exp(-alpha*armor)
 
     def update_heatlh(self, timestep):
         pass
@@ -53,7 +54,7 @@ class Character:
 
     def update_position(self, timestep):
         self.position = self.position + self.mv_speed * self.mv_dir * timestep
-        return self.mv_speed * self.mv_dir * timestep
+        return
 
     def update_spell_cd(self, timestep):
         pass

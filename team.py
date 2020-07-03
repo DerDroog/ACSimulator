@@ -3,9 +3,10 @@ import numpy as np
 
 
 class Team:
-    def __init__(self, name_, charlist_, alive_=True):
+    def __init__(self, name_, charlist_, icon_=None, alive_=True):
         self.name = name_
         self.charlist = charlist_
+        self.icon = icon_
         self.living_chars = [char for char in self.charlist if char.alive == True]
         self.alive = alive_
         for char in self.charlist:

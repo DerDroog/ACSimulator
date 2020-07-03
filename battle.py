@@ -7,13 +7,14 @@ import sys
 
 
 class Battle:
-    def __init__(self, max_time_, time_, team1_, team2_, timestep_, width_, height_, active_=True):
+    def __init__(self, max_time_, time_, team1_, team2_, timestep_, width_, height_, screen_, active_=True):
         self.max_time = max_time_
         self.time = time_
         self.team1 = team1_
         self.team2 = team2_
         self.timestep = timestep_
         self.battle_field = battlefield.Battlefield(width_, height_)
+        self.screen = screen_
         self.active = active_
 
     def update(self):
@@ -36,6 +37,7 @@ class Battle:
                 character.update_mv_dir(mv_target)
                 if character.target is None:
                     character.update_position(self.timestep)
+                self.screen.blit(character.team.icon, (character.position[0], character.position[1]))
                 character.update_atk_cd(self.timestep) #calls hit --> calls update_alive --> call update_states
 
                 character.update_dmg(self.timestep)
